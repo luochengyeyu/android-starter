@@ -21,10 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "android-starter"
 include(":app")
-include(":features:mine")
-include(":libs:common")
-include(":features:login")
-include(":libs:network")
-include(":libs:utils")
-include(":features:share")
-include(":features:payment")
