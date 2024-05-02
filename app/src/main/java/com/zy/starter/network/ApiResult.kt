@@ -1,6 +1,5 @@
 package com.zy.starter.network
 
-import com.zy.starter.network.base.BaseResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.net.SocketTimeoutException
@@ -16,8 +15,8 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> BaseResponse<T>): ApiResult<T
         try {
             val response = apiCall()  // 执行挂起函数
             if (response.isSuccessful()) {
-                // code = 0 的情况，将响应体封装在Result.Success
                 val data = response.data
+                // code = 0 的情况，将响应体封装在Result.Success
                 if (data != null) {
                     ApiResult.Success(data)
                 } else {
@@ -33,8 +32,8 @@ suspend fun <T> safeApiCall(apiCall: suspend () -> BaseResponse<T>): ApiResult<T
                 // 如果code != 0，将错误信息封装在Result.Error
                 ApiResult.Error(
                     ApiException(
-                        ApiErrors.INTERNAL_ERROR.code,
-                        ApiErrors.INTERNAL_ERROR.msg
+                        response.code,
+                        response.msg ?: ApiErrors.INTERNAL_ERROR.msg
                     )
                 )
             }

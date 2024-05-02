@@ -1,28 +1,31 @@
 package com.zy.starter
 
-import android.content.Intent
 import android.os.Bundle
-import com.zy.starter.base.BaseActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.dylanc.longan.startActivity
+import com.dylanc.viewbinding.binding
 import com.zy.starter.databinding.ActivityMainBinding
 import com.zy.starter.features.home.HomeActivity
+import com.zy.starter.features.login.ui.LoginActivity
+class MainActivity : AppCompatActivity() {
 
-class MainActivity : BaseActivity() {
+    private val binding: ActivityMainBinding by binding()
 
-    private lateinit var binding: ActivityMainBinding
-    override fun initViews() {
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initListeners()
+    }
+
+    private fun initListeners() {
         binding.run {
             btnHome.setOnClickListener {
-                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
-
+                startActivity<HomeActivity>()
+            }
+            btnLogin.setOnClickListener {
+                startActivity<LoginActivity>()
             }
         }
     }
 
-    override fun fetchData() {
-
-    }
-
-
 }
+

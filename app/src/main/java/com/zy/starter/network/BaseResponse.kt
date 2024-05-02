@@ -1,4 +1,4 @@
-package com.zy.starter.network.base
+package com.zy.starter.network
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

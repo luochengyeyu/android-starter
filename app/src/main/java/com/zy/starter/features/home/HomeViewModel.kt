@@ -2,7 +2,7 @@ package com.zy.starter.features.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.zy.starter.features.wanandroid.Banner
+import com.zy.starter.features.home.data.Banner
 import kotlinx.coroutines.launch
 
 class HomeViewModel : ViewModel() {

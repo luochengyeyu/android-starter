@@ -17,6 +17,8 @@ kotlinxCoroutinesCore = "1.8.1-Beta"
 kotlinxSerializationJson = "1.6.3"
 okhttp = "4.12.0"
 lifecycleVersion = "2.7.0"
+viewbindingKtx = "2.1.0"
+longan = "1.1.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,6 +37,8 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }
+viewbinding-ktx = { group = "com.github.DylanCaiCoding.ViewBindingKTX", name = "viewbinding-ktx", version.ref = "viewbindingKtx" }
+longan = { group = "com.github.DylanCaiCoding.Longan", name = "longan", version.ref = "longan" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

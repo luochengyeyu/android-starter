@@ -1,14 +1,16 @@
 package com.zy.starter.network
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.zy.starter.BuildConfig
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 
-object ApiCall {
+object ApiClient {
     private const val BASE_URL = "https://www.wanandroid.com/"
+
     /**
      * 请求超时时间
      */
@@ -31,6 +33,10 @@ object ApiCall {
             connectTimeout(DEFAULT_TIMEOUT.toLong(), TimeUnit.MILLISECONDS)
             readTimeout(DEFAULT_TIMEOUT.toLong(), TimeUnit.MILLISECONDS)
             writeTimeout(DEFAULT_TIMEOUT.toLong(), TimeUnit.MILLISECONDS)
+            if (BuildConfig.DEBUG) {
+                // 添加日志拦截器
+                addInterceptor(LogInterceptor())
+            }
             build()
         }
     }

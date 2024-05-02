@@ -1,7 +1,7 @@
 package com.zy.starter.network
 
+import com.dylanc.longan.toast
 import com.zy.starter.MyApp
-import com.zy.starter.extensions.toast
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.catch
