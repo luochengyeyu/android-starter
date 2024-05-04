@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kotlinSerialization)
-    alias(libs.plugins.ksp)
+    alias(libs.plugins.kapt)
+    //alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
 }
 
@@ -43,9 +44,9 @@ android {
         viewBinding = true
         buildConfig = true
     }
-    //kapt {
-    //    correctErrorTypes = true
-    //}
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
@@ -70,8 +71,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.hilt.android)
-    //implementation(libs.javapoet)
-    ksp(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
+    //ksp(libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
