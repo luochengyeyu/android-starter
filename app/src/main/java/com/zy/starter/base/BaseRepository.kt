@@ -12,7 +12,10 @@ import javax.inject.Inject
 
 open class BaseRepository {
 
-    protected suspend fun <T> request(apiCall: suspend () -> BaseResponse<T>): Flow<Result<T>> {
+    protected suspend fun <T> request(
+        apiCall: suspend () -> BaseResponse<T>,
+        onSuccess: suspend (T) -> Unit
+    ): Flow<Result<T>> {
         return flow {
             // 执行 Api 请求
             val response = apiCall()
@@ -21,6 +24,7 @@ open class BaseRepository {
                 // code = 0 的情况，将响应体封装在Result.Success
                 val data = response.data
                 if (data != null) {
+                    onSuccess(data)
                     Result.success(data)
                 } else {
                     Result.failure(
