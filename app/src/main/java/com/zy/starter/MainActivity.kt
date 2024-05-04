@@ -6,7 +6,7 @@ import com.dylanc.longan.startActivity
 import com.dylanc.viewbinding.binding
 import com.zy.starter.databinding.ActivityMainBinding
 import com.zy.starter.features.home.HomeActivity
-import com.zy.starter.features.login.ui.LoginActivity
+import com.zy.starter.features.user.ui.LoginActivity
 class MainActivity : AppCompatActivity() {
 
     private val binding: ActivityMainBinding by binding()

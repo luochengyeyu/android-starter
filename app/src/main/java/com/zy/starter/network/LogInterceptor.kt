@@ -5,7 +5,7 @@ import java.io.IOException
 import java.net.URLDecoder
 
 /**
- * Created by Superman on 2021/1/29.
+ * 日志拦截器
  */
 class LogInterceptor : Interceptor {
 
@@ -30,26 +30,26 @@ class LogInterceptor : Interceptor {
     }
 
     private fun logResponse(response: Response) {
-        val strb = StringBuffer()
-        strb.appendLine("\r\n")
-        strb.appendLine("<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-")
+        val buffer = StringBuffer()
+        buffer.appendLine("\r\n")
+        buffer.appendLine("<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-")
 
         var headerText = ""
         response.headers.toMultimap().forEach { header->
             headerText += "请求 Header:{${header.key}=${header.value}}\n"
         }
-        strb.appendln(headerText)
+        buffer.appendLine(headerText)
         kotlin.runCatching {
             //peek类似于clone数据流，监视，窥探，不能直接用原来的body的string流数据作为日志，会消费掉io，所有这里是peek，监测
             val peekBody: ResponseBody = response.peekBody(1024 * 1024)
-            strb.appendLine(peekBody.string())
+            buffer.appendLine(peekBody.string())
         }.getOrNull()
 
-        strb.appendLine(
+        buffer.appendLine(
             "<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<" +
                     "-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-<<-"
         )
-        logThat(ColorLevel.INFO(strb.toString()))
+        logThat(ColorLevel.INFO(buffer.toString()))
     }
 
 

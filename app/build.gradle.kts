@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -12,8 +14,11 @@ android {
         applicationId = "com.zy.starter"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        // 1_02_01 => v1.2.1
+        // 1_10_12 => v1.10.12
+        // 10_01_01 => v10.1.1
+        versionCode = 10000
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,10 +43,19 @@ android {
         viewBinding = true
         buildConfig = true
     }
+    //kapt {
+    //    correctErrorTypes = true
+    //}
 }
 
 dependencies {
+    // 三方库
+    // https://dylancaicoding.github.io/ViewBindingKTX
+    implementation(libs.viewbinding.ktx)
+    // https://dylancaicoding.github.io/Longan
+    implementation(libs.longan)
 
+    // 官方库
     implementation(libs.material)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -55,10 +69,9 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    // https://dylancaicoding.github.io/ViewBindingKTX
-    implementation(libs.viewbinding.ktx)
-    // https://dylancaicoding.github.io/Longan
-    implementation(libs.longan)
+    implementation(libs.hilt.android)
+    //implementation(libs.javapoet)
+    ksp(libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

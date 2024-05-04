@@ -1,13 +1,15 @@
 package com.zy.starter
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class MyApp : Application() {
+@HiltAndroidApp
+class App : Application() {
 
     companion object {
-        lateinit var instance: MyApp
+        lateinit var instance: App
 
-        fun get(): MyApp {
+        fun get(): App {
             return instance
         }
     }

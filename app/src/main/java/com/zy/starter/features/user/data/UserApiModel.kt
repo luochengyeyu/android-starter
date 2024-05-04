@@ -1,4 +1,4 @@
-package com.zy.starter.features.login.data
+package com.zy.starter.features.user.data
 
 
 import kotlinx.serialization.SerialName

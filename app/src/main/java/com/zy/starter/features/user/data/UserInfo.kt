@@ -1,4 +1,4 @@
-package com.zy.starter.features.login.data
+package com.zy.starter.features.user.data
 
 data class UserInfo(
     val id: Int,

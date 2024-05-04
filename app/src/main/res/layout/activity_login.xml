@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.login.ui.LoginActivity">
+    tools:context=".features.user.ui.LoginActivity">
 
     <TextView
         android:id="@+id/tv_username"

@@ -2,6 +2,7 @@ package com.zy.starter.network
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.zy.starter.BuildConfig
+import com.zy.starter.api.WanAndroidService
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -14,7 +15,7 @@ object ApiClient {
     /**
      * 请求超时时间
      */
-    private const val DEFAULT_TIMEOUT = 30000
+    private const val DEFAULT_TIMEOUT = 15000
 
     private val json = Json { ignoreUnknownKeys = true }
     private val contentType = "application/json".toMediaType()
