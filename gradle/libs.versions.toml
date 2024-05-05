@@ -22,6 +22,7 @@ lifecycleVersion = "2.7.0"
 viewbindingKtx = "2.1.0"
 longan = "1.1.1"
 hilt = "2.51.1"
+coil = "2.6.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,6 +45,7 @@ viewbinding-ktx = { group = "com.github.DylanCaiCoding.ViewBindingKTX", name = "
 longan = { group = "com.github.DylanCaiCoding.Longan", name = "longan", version.ref = "longan" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

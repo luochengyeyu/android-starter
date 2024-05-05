@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.dylanc.longan.startActivity
 import com.dylanc.viewbinding.binding
 import com.zy.starter.databinding.ActivityMainBinding
-import com.zy.starter.features.home.HomeActivity
+import com.zy.starter.features.home.ui.HomeActivity
+import com.zy.starter.features.home.ui.ImageActivity
 import com.zy.starter.features.user.ui.LoginActivity
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity() {
             }
             btnLogin.setOnClickListener {
                 startActivity<LoginActivity>()
+            }
+            btnImage.setOnClickListener {
+                startActivity<ImageActivity>()
             }
         }
     }

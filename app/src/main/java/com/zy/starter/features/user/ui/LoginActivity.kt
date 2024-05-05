@@ -13,7 +13,7 @@ import com.dylanc.longan.startActivity
 import com.dylanc.longan.toast
 import com.dylanc.viewbinding.binding
 import com.zy.starter.databinding.ActivityLoginBinding
-import com.zy.starter.features.home.HomeActivity
+import com.zy.starter.features.home.ui.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

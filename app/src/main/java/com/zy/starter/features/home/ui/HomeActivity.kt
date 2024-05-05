@@ -1,4 +1,4 @@
-package com.zy.starter.features.home
+package com.zy.starter.features.home.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

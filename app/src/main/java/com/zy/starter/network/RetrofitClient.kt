@@ -2,14 +2,13 @@ package com.zy.starter.network
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.zy.starter.BuildConfig
-import com.zy.starter.api.WanAndroidService
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 
-object ApiClient {
+object RetrofitClient {
     private const val BASE_URL = "https://www.wanandroid.com/"
 
     /**

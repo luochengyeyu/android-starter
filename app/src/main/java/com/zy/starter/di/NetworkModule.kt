@@ -1,7 +1,7 @@
 package com.zy.starter.di
 
 import com.zy.starter.api.WanAndroidService
-import com.zy.starter.network.ApiClient
+import com.zy.starter.network.RetrofitClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +15,6 @@ class NetworkModule {
     @Singleton
     @Provides
     fun provideWanAndroidService(): WanAndroidService {
-        return ApiClient.create(WanAndroidService::class.java)
+        return RetrofitClient.create(WanAndroidService::class.java)
     }
 }

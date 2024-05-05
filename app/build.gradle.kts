@@ -53,8 +53,10 @@ dependencies {
     // 三方库
     // https://dylancaicoding.github.io/ViewBindingKTX
     implementation(libs.viewbinding.ktx)
-    // https://dylancaicoding.github.io/Longan
+    // Kotlin工具库 https://dylancaicoding.github.io/Longan
     implementation(libs.longan)
+    // 图片加载库 https://github.com/coil-kt/coil
+    implementation(libs.coil)
 
     // 官方库
     implementation(libs.material)
@@ -70,6 +72,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    // 依赖注入库 https://dagger.dev/hilt/
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     //ksp(libs.hilt.compiler)

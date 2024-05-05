@@ -83,7 +83,7 @@ class LogInterceptor : Interceptor {
         request.headers.toMultimap().forEach { header->
             headerStr += "请求 Header:{${header.key}=${header.value}}\n"
         }
-        strb.appendln(headerStr)
+        strb.appendLine(headerStr)
     }
 
     private fun logBasic(strb: StringBuilder, request: Request, connection: Connection?) {
