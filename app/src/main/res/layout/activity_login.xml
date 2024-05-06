@@ -58,15 +58,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
-    <ProgressBar
-        android:id="@+id/pb_loading"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="5dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_login"
-        app:layout_constraintStart_toEndOf="@+id/btn_login"
-        app:layout_constraintTop_toTopOf="@+id/btn_login"
-        tools:visibility="visible" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

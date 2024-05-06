@@ -1,7 +1,9 @@
 package com.zy.starter.features.user.ui
 
 import androidx.lifecycle.viewModelScope
+import com.dylanc.longan.logDebug
 import com.zy.starter.base.BaseViewModel
+import com.zy.starter.base.LoadingView
 import com.zy.starter.base.UiEffect
 import com.zy.starter.base.UiEvent
 import com.zy.starter.base.UiState
@@ -15,7 +17,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class LoginUiState(
-    val isLoading: Boolean = false,
+    val loadingView: LoadingView = LoadingView.Content,
 ) : UiState
 
 sealed class LoginEvent : UiEvent {
@@ -26,7 +28,6 @@ sealed class LoginEvent : UiEvent {
 
 sealed class LoginEffect : UiEffect {
     data class ShowToast(val message: String) : LoginEffect()
-    data class ShowSnackBar(val message: String) : LoginEffect()
     data object NavigateToHome : LoginEffect()
 }
 
@@ -54,17 +55,19 @@ class LoginViewModel @Inject constructor(private val repository: LoginRepository
             repository.login(username, password)
                 .onStart {
                     setState {
-                        copy(isLoading = true)
+                        copy(loadingView = LoadingView.Loading)
                     }
                 }
                 .onCompletion {
+                    // 无论成功失败都会走
+                }
+                .commonCatch {
                     setState {
-                        copy(isLoading = false)
+                        copy(loadingView = LoadingView.Content)
                     }
                 }
-                // 处理异常
-                .commonCatch {}
                 .collect { result ->
+                    logDebug("collect ======> $result")
                     result.onSuccess {
                         val userInfo = it.toUserInfo()
                         setEffect {
@@ -78,6 +81,9 @@ class LoginViewModel @Inject constructor(private val repository: LoginRepository
                             setEffect {
                                 LoginEffect.ShowToast(it)
                             }
+                        }
+                        setState {
+                            copy(loadingView = LoadingView.Content)
                         }
                     }
                 }

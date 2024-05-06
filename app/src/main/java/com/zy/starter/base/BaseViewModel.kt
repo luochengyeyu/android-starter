@@ -99,3 +99,10 @@ interface UiEvent
  * 例如：弹Toast、导航Fragment等
  */
 interface UiEffect
+
+sealed interface LoadingView {
+    data object Loading : LoadingView
+    data object Empty : LoadingView
+    data object Error : LoadingView
+    data object Content : LoadingView
+}

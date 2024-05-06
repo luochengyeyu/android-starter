@@ -1,6 +1,7 @@
 package com.zy.starter.base
 
 import com.zy.starter.api.WanAndroidService
+import com.zy.starter.extensions.commonCatch
 import com.zy.starter.network.ApiErrors
 import com.zy.starter.network.ApiException
 import com.zy.starter.network.BaseResponse

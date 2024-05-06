@@ -1,13 +1,12 @@
 package com.zy.starter.features.home.ui
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.dylanc.viewbinding.binding
+import com.dylanc.longan.startActivity
+import com.zy.starter.R
+import com.zy.starter.base.BaseActivity
 import com.zy.starter.databinding.ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
-
-    private val binding: ActivityHomeBinding by binding()
+class HomeActivity : BaseActivity<ActivityHomeBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,6 +14,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun initListeners() {
+        setToolbar("HomeActivity")
         binding.run {
             imageView.setOnClickListener {
 

@@ -50,14 +50,6 @@ android {
 }
 
 dependencies {
-    // 三方库
-    // https://dylancaicoding.github.io/ViewBindingKTX
-    implementation(libs.viewbinding.ktx)
-    // Kotlin工具库 https://dylancaicoding.github.io/Longan
-    implementation(libs.longan)
-    // 图片加载库 https://github.com/coil-kt/coil
-    implementation(libs.coil)
-
     // 官方库
     implementation(libs.material)
     implementation(libs.androidx.core.ktx)
@@ -76,6 +68,18 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
     //ksp(libs.hilt.compiler)
+    // 三方库
+    // https://dylancaicoding.github.io/ViewBindingKTX
+    //implementation(libs.viewbinding.ktx)
+    implementation(libs.viewbinding.base)
+    // 状态布局 https://dylancaicoding.github.io/LoadingStateView
+    implementation(libs.loadingstateview.ktx)
+    // Kotlin工具库 https://dylancaicoding.github.io/Longan
+    implementation(libs.longan)
+    // 图片加载库 https://github.com/coil-kt/coil
+    implementation(libs.coil)
+    // 沉浸式状态栏 https://github.com/Zackratos/UltimateBarX
+    implementation(libs.ultimatebarx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

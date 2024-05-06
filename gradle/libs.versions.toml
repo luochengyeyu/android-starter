@@ -23,6 +23,8 @@ viewbindingKtx = "2.1.0"
 longan = "1.1.1"
 hilt = "2.51.1"
 coil = "2.6.0"
+loadingstateviewKtx = "4.1.0"
+ultimatebarx = "0.8.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,10 +44,13 @@ kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleVersion" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleVersion" }
 viewbinding-ktx = { group = "com.github.DylanCaiCoding.ViewBindingKTX", name = "viewbinding-ktx", version.ref = "viewbindingKtx" }
+viewbinding-base = { group = "com.github.DylanCaiCoding.ViewBindingKTX", name = "viewbinding-base", version.ref = "viewbindingKtx" }
 longan = { group = "com.github.DylanCaiCoding.Longan", name = "longan", version.ref = "longan" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+loadingstateview-ktx = { group = "com.github.DylanCaiCoding.LoadingStateView", name = "loadingstateview-ktx", version.ref = "loadingstateviewKtx" }
+ultimatebarx = { group = "com.gitee.zackratos", name = "UltimateBarX", version.ref = "ultimatebarx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
