@@ -25,6 +25,8 @@ hilt = "2.51.1"
 coil = "2.6.0"
 loadingstateviewKtx = "4.1.0"
 ultimatebarx = "0.8.1"
+xui = "1.2.1"
+lifecycleLivedataKtx = "2.8.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -51,6 +53,8 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.r
 coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 loadingstateview-ktx = { group = "com.github.DylanCaiCoding.LoadingStateView", name = "loadingstateview-ktx", version.ref = "loadingstateviewKtx" }
 ultimatebarx = { group = "com.gitee.zackratos", name = "UltimateBarX", version.ref = "ultimatebarx" }
+xui = { group = "com.github.xuexiangjys", name = "XUI", version.ref = "xui" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

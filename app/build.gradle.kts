@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.zy.starter"
-        minSdk = 26
+        minSdk = 23
         targetSdk = 34
         // 1_02_01 => v1.2.1
         // 1_10_12 => v1.10.12
@@ -66,6 +66,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     // 依赖注入库 https://dagger.dev/hilt/
     implementation(libs.hilt.android)
+    implementation(libs.xui)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
     kapt(libs.hilt.compiler)
     //ksp(libs.hilt.compiler)
     // 三方库

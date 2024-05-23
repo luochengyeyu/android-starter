@@ -1,6 +1,10 @@
 package com.zy.starter
 
 import android.app.Application
+import android.content.Context
+import android.os.Build
+import coil.Coil
+import coil.ImageLoader
 import com.dylanc.loadingstateview.LoadingStateView
 import com.zy.starter.library.loadingstateview.EmptyViewDelegate
 import com.zy.starter.library.loadingstateview.ErrorViewDelegate
@@ -14,6 +18,7 @@ class App : Application() {
 
     companion object {
         lateinit var instance: App
+            private set
 
         fun get(): App {
             return instance
@@ -23,6 +28,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        initCoil(this)
         LoadingStateView.setViewDelegatePool {
             register(
                 ToolbarViewDelegate(),
@@ -31,5 +37,10 @@ class App : Application() {
                 EmptyViewDelegate(),
             )
         }
+    }
+
+    private fun initCoil(context: Context) {
+        val imageLoader = ImageLoader.Builder(context = context).build()
+        Coil.setImageLoader(imageLoader)
     }
 }

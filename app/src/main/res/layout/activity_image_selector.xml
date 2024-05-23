@@ -5,27 +5,26 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".features.image.ui.ImageActivity">
+    tools:context=".features.image.ui.ImageSelectorActivity">
 
     <Button
-        android:id="@+id/btn_coil"
+        android:id="@+id/btn_pick_single"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coil"
+        android:text="选单张图"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_img_selector"
+        android:id="@+id/btn_pick_multi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="图片选择库"
+        android:text="选多张图"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_coil" />
-
+        app:layout_constraintTop_toBottomOf="@id/btn_pick_single" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
